@@ -1,12 +1,11 @@
+'use strict';
 module.exports = function(sequelize, DataTypes) {
   const user = sequelize.define('User', {
     id: {
-      type:DataTypes.STRING,
+      autoIncrement: true,
+      type: DataTypes.INTEGER,
       primaryKey: true,
-      validate: {
-        allowNull: false,
-        len: [8, 40]
-      }
+      allowNull: false,
     },
     password: {
       type: DataTypes.STRING,
@@ -34,6 +33,9 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       defaultValue: 1,
       allowNull: false,
+    },
+    salt: {
+      type: DataTypes.STRING
     }
   }, {
     freezeTableName: true,
