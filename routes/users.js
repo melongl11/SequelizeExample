@@ -1,3 +1,5 @@
+/* jshint esversion: 6 */
+
 var express = require('express');
 var router = express.Router();
 var models = require("../models/index.js");
@@ -34,8 +36,8 @@ router.post("/sign_up", function(req,res,next){
         res.redirect("/users/sign_up");
     })
     .catch( err => {
-        console.log(err)
-    })
+        console.log(err);
+    });
 });
 
 router.get('/login', function(req, res, next) {
@@ -86,8 +88,8 @@ router.get("/logout", function(req,res,next){
     req.session.destroy();
     res.clearCookie('sid');
 
-    res.redirect("/users/login")
-})
+    res.redirect("/users/login");
+});
 
 
 module.exports = router;

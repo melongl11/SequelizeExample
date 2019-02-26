@@ -1,4 +1,6 @@
+/* jshint esversion: 6 */
 'use strict';
+
 module.exports = function(sequelize, DataTypes) {
   const user = sequelize.define('User', {
     id: {
@@ -41,5 +43,11 @@ module.exports = function(sequelize, DataTypes) {
     freezeTableName: true,
     tableName: "user"
   });
+
+  user.associate = function(models) {
+    user.belongsTo(models.Tier, {
+      foreignKey: "tier"
+    });
+  };
   return user;
 };

@@ -1,3 +1,5 @@
+/* jshint esversion: 6 */
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -13,11 +15,11 @@ var app = express();
 let models = require("./models/index.js");
 
 models.sequelize.sync().then( () => {
-  console.log(" DB 연결 성공")
+  console.log(" DB 연결 성공");
 }).catch(err => {
-  console.log("연결 실패")
-  console.log(err)
-})
+  console.log("연결 실패");
+  console.log(err);
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

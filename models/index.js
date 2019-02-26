@@ -37,4 +37,9 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
+db.Tier.create({id: 1});
+db.Tier.create({id: 2});
+db.Tier.create({id: 3});
+db.Tier.create({id: 4});
+
 module.exports = db;
