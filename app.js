@@ -16,6 +16,14 @@ let models = require("./models/index.js");
 
 models.sequelize.sync().then( () => {
   console.log(" DB 연결 성공");
+  models.Tier.create({id: 1}).then( () => {
+    models.Tier.create({id: 2});
+    models.Tier.create({id: 3});
+    models.Tier.create({id: 4});
+  }).catch(err => {
+    console.log("이미 존재합니다.");
+  });
+
 }).catch(err => {
   console.log("연결 실패");
   console.log(err);

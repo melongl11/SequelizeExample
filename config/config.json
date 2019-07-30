@@ -2,21 +2,22 @@
   "development": {
     "username": "root",
     "password": "wlalsrb0928",
-    "database": "database_development",
+    "database": "toping_development",
     "host": "127.0.0.1",
+    "port": 3307,
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": "wlalsrb0928",
-    "database": "database_test",
+    "database": "toping_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
     "password": "wlalsrb0928",
-    "database": "database_production",
+    "database": "toping_production",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
